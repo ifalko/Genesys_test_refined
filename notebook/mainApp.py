@@ -1,4 +1,3 @@
-
 import sys
 import re
 from PyQt4.QtCore import *
@@ -55,11 +54,11 @@ class MyTable(QTableWidget):
         button = qApp.focusWidget()
         index = self.indexAt(button.pos())
         if index.isValid():
-			edit = myEdit(table=self, id_contact=self.id_by_row[index.row()])
+			edit = MyEdit(table=self, id_contact=self.id_by_row[index.row()])
 			edit.exec_()
 
 
-class myEdit(QDialog):
+class MyEdit(QDialog):
     def __init__(self, table, id_contact, parent=None):
 		QDialog.__init__(self, parent)
 		self.table = table
